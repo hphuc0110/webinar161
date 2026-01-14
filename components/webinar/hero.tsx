@@ -188,10 +188,10 @@ export default function Hero() {
   </div>
 
   <div className="space-y-2 sm:space-y-3 delay-400">
-    <p className="text-blue-200 font-semibold text-md sm:text-base lg:text-lg uppercase tracking-wider">
+    <p className="text-white font-semibold text-md sm:text-base lg:text-lg uppercase tracking-wider">
       Thời gian: 16 tháng 1, 2026
     </p>
-    <p className="text-blue-200 font-semibold text-md sm:text-base lg:text-lg uppercase tracking-wider">
+    <p className="text-white font-semibold text-md sm:text-base lg:text-lg uppercase tracking-wider">
       Giờ: 8:00 tối (GMT+7)
     </p>
   </div>
@@ -199,7 +199,7 @@ export default function Hero() {
 
 
         {/* Right Side - Registration Form */}
-        <div className="max-w-lg w-full bg-white/95 backdrop-blur-md border-l-4 border-blue-500 p-4 sm:p-5 rounded-lg sm:rounded-xl shadow-2xl animate-fadeInRight hover:shadow-blue-500/30 transition-all duration-500 hover-lift">
+        <div className="max-w-lg w-full bg-white/95 backdrop-blur-md border-l-4 border-blue-500 p-4 sm:p-5 rounded-lg sm:rounded-xl shadow-2xl animate-fadeInRight hover:shadow-blue-500/30 transition-all duration-500 hover-lift overflow-hidden">
           <div className="text-center mb-3 sm:mb-4">
             <h3 className="text-blue-900 font-bold text-[16px] sm:text-xl mb-1">Đăng Ký Tham Gia</h3>
             <p className="text-blue-600 text-[11px] sm:text-xs">Điền thông tin để nhận vé miễn phí</p>
@@ -246,6 +246,7 @@ export default function Hero() {
                   </FormItem>
                 )}
               />
+              
               <FormField
                 control={form.control}
                 name="phone"
@@ -277,6 +278,34 @@ export default function Hero() {
                         {...field}
                       />
                     </FormControl>
+                    <FormMessage className="text-[10px] sm:text-xs" />
+                  </FormItem>
+                )}
+              />
+                            <FormField
+                control={form.control}
+                name="topic"
+                render={({ field }) => (
+                  <FormItem className="delay-700">
+                    <FormLabel className="text-blue-700 text-[11px] sm:text-xs font-semibold">Chủ đề bạn quan tâm</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger className="w-full bg-blue-50 text-blue-900 border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 h-8 sm:h-9 text-[13px] sm:text-sm">
+                          <SelectValue placeholder="Chọn chủ đề" className="truncate" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent className="max-w-[calc(100vw-2rem)] sm:max-w-[28rem] w-[var(--radix-select-trigger-width)] max-h-[300px] overflow-y-auto">
+                      <SelectItem value="nganh-nghe-bien-mat" className="whitespace-normal break-words py-2 px-3">
+                          <span className="block text-left text-sm sm:text-sm leading-relaxed">Các nhóm ngành nghề sẽ biến mất trong kỷ nguyên AI trước năm 2030.</span>
+                        </SelectItem>
+                        <SelectItem value="webinar-23-1" className="whitespace-normal break-words py-2 px-3">
+                          <span className="block text-left text-xs sm:text-sm leading-relaxed">Webinar: Cách tư duy chiến lược, xây dựng kế hoạch marketing với AI (23/1)</span>
+                        </SelectItem>
+                        <SelectItem value="webinar-30-1" className="whitespace-normal break-words py-2 px-3">
+                          <span className="block text-left text-sm sm:text-sm leading-relaxed">Webinar: Lộ trình học marketing mới trong kỷ nguyên AI (30/1)</span>
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
                     <FormMessage className="text-[10px] sm:text-xs" />
                   </FormItem>
                 )}

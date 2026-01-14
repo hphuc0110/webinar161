@@ -199,7 +199,7 @@ export default function Hero() {
 
 
         {/* Right Side - Registration Form */}
-        <div className="max-w-lg w-full bg-white/95 backdrop-blur-md border-l-4 border-blue-500 p-4 sm:p-5 rounded-lg sm:rounded-xl shadow-2xl animate-fadeInRight hover:shadow-blue-500/30 transition-all duration-500 hover-lift">
+        <div className="max-w-lg w-full bg-white/95 backdrop-blur-md border-l-4 border-blue-500 p-4 sm:p-5 rounded-lg sm:rounded-xl shadow-2xl animate-fadeInRight hover:shadow-blue-500/30 transition-all duration-500 hover-lift overflow-hidden">
           <div className="text-center mb-3 sm:mb-4">
             <h3 className="text-blue-900 font-bold text-[16px] sm:text-xl mb-1">Đăng Ký Tham Gia</h3>
             <p className="text-blue-600 text-[11px] sm:text-xs">Điền thông tin để nhận vé miễn phí</p>

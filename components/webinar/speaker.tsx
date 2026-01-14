@@ -23,7 +23,7 @@ Chia sẻ và trình diễn trực tiếp cách AI được ứng dụng để t
     },
     my: {
       name: "TRỊNH THỊ HÀ MY",
-      title: `Co- Founder Codemely | Kỹ sư Công nghệ Phần mềm | Ứng viên tài năng cuộc thi "Cơ hội cho ai" mùa 4`,
+      title: `Co- Founder Codemely | Thạc sĩ Công nghệ Phần mềm `,
       bio: `Phân tích cách ứng dụng AI có hệ thống trong Marketing, nhấn mạnh vai trò của quy trình và nguyên tắc để đảm bảo an toàn cho thương hiệu.`,
       image: "/it.png", // Thay đổi đường dẫn ảnh tại đây (ví dụ: "/my.png")
     },

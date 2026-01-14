@@ -54,7 +54,7 @@ const webinarData: WebinarItem[] = [
       },
       {
         name: "TRỊNH THỊ HÀ MY",
-        title: `Co- Founder Codemely | Kỹ sư Công nghệ Phần mềm | Ứng viên tài năng cuộc thi "Cơ hội cho ai" mùa 4`,
+        title: `Co- Founder Codemely | Thạc sĩ Công nghệ Phần mềm `,
         image: "/it.png",
       },
       {
