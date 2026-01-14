@@ -346,7 +346,7 @@ const ListSchedule = () => {
 
                         {/* Target Audience */}
                         <motion.div
-                          className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3"
+                          className="flex flex-col gap-2 sm:gap-3"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true, amount: 0.2 }}
@@ -358,7 +358,7 @@ const ListSchedule = () => {
                               Đối tượng nên tham gia:
                             </p>
                           </div>
-                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed sm:ml-0 ml-6">{selectedWebinar.targetAudience}</p>
+                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{selectedWebinar.targetAudience}</p>
                         </motion.div>
                       </motion.div>
                     </>

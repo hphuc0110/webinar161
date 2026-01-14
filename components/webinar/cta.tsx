@@ -45,7 +45,6 @@ export default function CTA() {
                 <Phone className="w-6 h-6 text-blue-600" />
               </div>
               <p className="text-blue-600 text-sm mb-2">Điện Thoại</p>
-              <p className="text-blue-900 font-bold text-lg">0325 194 889</p>
               <p className="text-blue-900 font-bold text-lg">099 696 3399</p>
             </div>
             <div className="text-center p-6 rounded-xl transition-all duration-300 delay-200">
@@ -53,12 +52,11 @@ export default function CTA() {
                 <MapPin className="w-6 h-6 text-blue-600" />
               </div>
               <p className="text-blue-600 text-sm mb-2">Địa Chỉ</p>
-              <p className="text-blue-900 font-bold">1 Ngụy Như Kom Tum, Thanh Xuân, Hà Nội</p>
+              <p className="text-blue-900 font-bold">1 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội</p>
               <p className="text-blue-900 font-bold">support@honglinheducation.vn</p>
             </div>
             <div className="text-center p-6 rounded-xl transition-all duration-300 delay-300">
-              <p className="text-blue-600 text-sm mb-4">Theo Dõi Chúng Tôi</p>
-              <div className="flex justify-center gap-4 cursor-pointer">
+              <div className="flex justify-center gap-4 cursor-pointer mb-4">
                 {[
                   // { icon: <Instagram className="w-5 h-5" />, name: "Instagram" },
                   { icon: <Facebook className="w-5 h-5" />, name: "Facebook", href: "https://www.facebook.com/AIfiftyseven" },
@@ -74,6 +72,7 @@ export default function CTA() {
                   </div>
                 ))}
               </div>
+              <p className="text-blue-600 text-sm">Theo Dõi Chúng Tôi</p>
             </div>
           </div>
         </div>

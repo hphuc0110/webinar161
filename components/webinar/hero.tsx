@@ -225,23 +225,6 @@ export default function Hero() {
               />
               <FormField
                 control={form.control}
-                name="organization"
-                render={({ field }) => (
-                  <FormItem className="delay-200">
-                    <FormLabel className="text-blue-700 text-[11px] sm:text-xs font-semibold">Đơn vị công tác</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="Nhập đơn vị công tác"
-                        className="bg-blue-50 text-blue-900 border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 h-8 sm:h-9 text-[13px] sm:text-sm"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage className="text-[10px] sm:text-xs" />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
                 name="role"
                 render={({ field }) => (
                   <FormItem className="delay-600">

@@ -23,13 +23,13 @@ Chia sẻ và trình diễn trực tiếp cách AI được ứng dụng để t
     },
     my: {
       name: "TRỊNH THỊ HÀ MY",
-      title: `Kỹ sư Công nghệ Phần mềm | Ứng viên tài năng cuộc thi "Cơ hội cho ai" mùa 4`,
+      title: `Co- Founder Codemely | Kỹ sư Công nghệ Phần mềm | Ứng viên tài năng cuộc thi "Cơ hội cho ai" mùa 4`,
       bio: `Phân tích cách ứng dụng AI có hệ thống trong Marketing, nhấn mạnh vai trò của quy trình và nguyên tắc để đảm bảo an toàn cho thương hiệu.`,
       image: "/it.png", // Thay đổi đường dẫn ảnh tại đây (ví dụ: "/my.png")
     },
     "hung-student": {
       name: "NGUYỄN VIỆT HƯNG",
-      title: `Sinh viên ưu tú ĐH Bách khoa Hà Nội | Thủ khoa 4 khối THPTQG 2025`,
+      title: `Thủ khoa 4 khối THPTQG 2025 | Sinh viên ưu tú ĐH Bách khoa Hà Nội`,
       bio: `Đại diện góc nhìn người học, đặt ra câu hỏi về những kỹ năng cần thiết để thích nghi và học tập hiệu quả trong thời đại AI.`,
       image: "/viethung.png", 
     },
@@ -50,15 +50,6 @@ Chia sẻ và trình diễn trực tiếp cách AI được ứng dụng để t
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">DIỄN GIẢ WEBINAR</h2>
-          <motion.p
-            className="text-gray-600 mb-6"
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Giới thiệu về diễn giả và kinh nghiệm của họ.
-          </motion.p>
           <motion.div
             className="w-20 h-1 bg-blue-500"
             initial={{ width: 0 }}

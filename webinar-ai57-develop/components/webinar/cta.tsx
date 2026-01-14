@@ -57,8 +57,7 @@ export default function CTA() {
               <p className="text-blue-900 font-bold">support@honglinheducation.vn</p>
             </div>
             <div className="text-center p-6 rounded-xl transition-all duration-300 delay-300">
-              <p className="text-blue-600 text-sm mb-4">Theo Dõi Chúng Tôi</p>
-              <div className="flex justify-center gap-4 cursor-pointer">
+              <div className="flex justify-center gap-4 cursor-pointer mb-4">
                 {[
                   // { icon: <Instagram className="w-5 h-5" />, name: "Instagram" },
                   { icon: <Facebook className="w-5 h-5" />, name: "Facebook", href: "https://www.facebook.com/AIfiftyseven" },
@@ -74,6 +73,7 @@ export default function CTA() {
                   </div>
                 ))}
               </div>
+              <p className="text-blue-600 text-sm">Theo Dõi Chúng Tôi</p>
             </div>
           </div>
         </div>
