@@ -148,15 +148,6 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-4 sm:gap-6 items-center relative z-10">
         {/* Left Side - Event Info */}
         <div className="space-y-6 sm:space-y-8 animate-fadeInLeft">
-  <div className="space-y-1 sm:space-y-2">
-    <p className="text-blue-200 font-semibold text-[10px] sm:text-sm uppercase tracking-wider">
-      Thời gian: 16 tháng 1, 2026
-    </p>
-    <p className="text-blue-200 font-semibold text-[10px] sm:text-sm uppercase tracking-wider delay-100">
-      Giờ: 8:00 tối (GMT+7)
-    </p>
-  </div>
-
   <div className="space-y-3 sm:space-y-4 delay-200">
     <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-pretty leading-snug sm:leading-tight">
       SỰ THẬT VỀ THỊ TRƯỜNG LAO ĐỘNG THỜI AI: CẢNH BÁO 5 NHÓM NGÀNH SẼ "BIẾN MẤT" VÀO NĂM 2030:
@@ -194,6 +185,15 @@ export default function Hero() {
         </div>
       ))}
     </div>
+  </div>
+
+  <div className="space-y-2 sm:space-y-3 delay-400">
+    <p className="text-blue-200 font-semibold text-md sm:text-base lg:text-lg uppercase tracking-wider">
+      Thời gian: 16 tháng 1, 2026
+    </p>
+    <p className="text-blue-200 font-semibold text-md sm:text-base lg:text-lg uppercase tracking-wider">
+      Giờ: 8:00 tối (GMT+7)
+    </p>
   </div>
 </div>
 
@@ -322,28 +322,6 @@ export default function Hero() {
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name="topic"
-                render={({ field }) => (
-                  <FormItem className="delay-700">
-                    <FormLabel className="text-blue-700 text-[11px] sm:text-xs font-semibold">Chủ đề bạn quan tâm</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger className="w-full bg-blue-50 text-blue-900 border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 h-8 sm:h-9 text-[13px] sm:text-sm">
-                          <SelectValue placeholder="Chọn chủ đề" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="webinar-23-1">Webinar: Cách tư duy chiến lược, xây dựng kế hoạch marketing với AI (23/1)</SelectItem>
-                        <SelectItem value="webinar-30-1">Webinar: Lộ trình học marketing mới trong kỷ nguyên AI (30/1)</SelectItem>
-                        <SelectItem value="nganh-nghe-bien-mat">Các nhóm ngành nghề sẽ biến mất trong kỷ nguyên AI trước năm 2030.</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage className="text-[10px] sm:text-xs" />
-                  </FormItem>
-                )}
-              />
               <FormField
                 control={form.control}
                 name="question"

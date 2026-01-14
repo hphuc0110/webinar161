@@ -8,6 +8,12 @@ import { cn } from "@/lib/utils"
 import AvatarComponent from "../common/avatar"
 import Image from "next/image"
 
+interface Speaker {
+  name: string
+  title: string
+  image: string
+}
+
 interface WebinarItem {
   id: string
   date: Date
@@ -16,6 +22,7 @@ interface WebinarItem {
   dateTime: string
   format: string
   speaker: string
+  speakers?: Speaker[]
   mainContent: {
     title: string
     items: string[]
@@ -34,12 +41,34 @@ const webinarData: WebinarItem[] = [
     dateTime: "20:00 | Thứ Sáu, Ngày 16 tháng 01 năm 2026",
     format: "Webinar",
     speaker: "Lê Thanh Hưng",
+    speakers: [
+      {
+        name: "Lê Thanh Hưng",
+        title: "DevRel Manager",
+        image: "/tml.png",
+      },
+      {
+        name: "PHẠM TIẾN ĐẠT",
+        title: `Kỹ sư CNTT | Nhà sáng tạo nội dung "Banker thích code"`,
+        image: "/banker.png",
+      },
+      {
+        name: "TRỊNH THỊ HÀ MY",
+        title: `Kỹ sư Công nghệ Phần mềm | Ứng viên tài năng cuộc thi "Cơ hội cho ai" mùa 4`,
+        image: "/it.png",
+      },
+      {
+        name: "NGUYỄN VIỆT HƯNG",
+        title: "Sinh viên ưu tú ĐH Bách khoa Hà Nội | Thủ khoa 4 khối THPTQG 2025",
+        image: "/viethung.png",
+      },
+    ],
     mainContent: {
       title: "Nội dung chính",
       items: [
         "Tổng quan tác động của AI lên ngành Marketing",
         "Dẫn chứng thực tế về nguy cơ AI thay thế các vị trí Marketing (content, hình ảnh, video, ads…)",
-        "Phân tích Marketing sẽ “đổi dạng” như thế nào trong thời đại AI (công việc nào mất – công việc nào còn – kỹ năng nào bắt buộc)",
+        "Phân tích Marketing sẽ \"đổi dạng\" như thế nào trong thời đại AI (công việc nào mất – công việc nào còn – kỹ năng nào bắt buộc)",
         "Demo thực tế workflow Marketing khi có AI, so sánh trước và sau AI",
         "Giải pháp thích nghi và liên hệ chương trình AI57 như một lộ trình AI phổ cập cho người làm Marketing",
       ],
@@ -239,7 +268,7 @@ const ListSchedule = () => {
                           <p className="text-xs sm:text-sm text-gray-600 sm:ml-0 ml-6">{selectedWebinar.format}</p>
                         </motion.div>
 
-                        {/* Speaker */}
+                        {/* Speakers */}
                         <motion.div
                           className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3"
                           initial={{ opacity: 0, x: -10 }}
@@ -251,12 +280,30 @@ const ListSchedule = () => {
                             <User className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 shrink-0" />
                             <p className="text-xs sm:text-sm font-semibold text-gray-700">Diễn giả:</p>
                           </div>
-                          <div className="sm:ml-0 ml-6">
-                            <AvatarComponent
-                              name={selectedWebinar.speaker}
-                              description="Admin group 'Bình dân học AI'"
-                              imageSrc="/tml.png"
-                            />
+                          <div className="sm:ml-0 ml-6 flex-1 space-y-3">
+                            {selectedWebinar.speakers && selectedWebinar.speakers.length > 0 ? (
+                              selectedWebinar.speakers.map((speaker, index) => (
+                                <motion.div
+                                  key={index}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  whileInView={{ opacity: 1, y: 0 }}
+                                  viewport={{ once: true, amount: 0.2 }}
+                                  transition={{ delay: 0.6 + index * 0.1, duration: 0.3 }}
+                                >
+                                  <AvatarComponent
+                                    name={speaker.name}
+                                    description={speaker.title}
+                                    imageSrc={speaker.image}
+                                  />
+                                </motion.div>
+                              ))
+                            ) : (
+                              <AvatarComponent
+                                name={selectedWebinar.speaker}
+                                description="Admin group 'Bình dân học AI'"
+                                imageSrc="/tml.png"
+                              />
+                            )}
                           </div>
                         </motion.div>
 
