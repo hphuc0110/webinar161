@@ -31,6 +31,19 @@ const formSchema = z.object({
   name: z.string().min(2, "Họ và tên phải có ít nhất 2 ký tự"),
   phone: z.string().min(10, "Số điện thoại không hợp lệ").regex(/^[0-9+\-\s()]+$/, "Số điện thoại chỉ được chứa số và ký tự đặc biệt"),
   email: z.string().email("Email không hợp lệ"),
+  studentName: z.string().min(2, "Họ tên học sinh phải có ít nhất 2 ký tự"),
+  birthYear: z
+    .string()
+    .regex(/^\d{4}$/, "Năm sinh phải là 4 chữ số")
+    .refine(
+      (year) => {
+        const y = parseInt(year, 10)
+        const currentYear = new Date().getFullYear()
+        return y >= 2000 && y <= currentYear
+      },
+      { message: "Năm sinh không hợp lệ" }
+    ),
+  school: z.string().min(2, "Tên trường phải có ít nhất 2 ký tự"),
   question: z.string().optional(),
   source: z.string().min(1, "Vui lòng chọn bạn biết tới chương trình qua đâu"),
 })
@@ -85,6 +98,9 @@ export default function Hero() {
       name: "",
       phone: "",
       email: "",
+      studentName: "",
+      birthYear: "",
+      school: "",
       question: "",
       source: "",
     },
@@ -251,6 +267,62 @@ export default function Hero() {
                   </FormItem>
                 )}
               />
+
+              <FormField
+                control={form.control}
+                name="studentName"
+                render={({ field }) => (
+                  <FormItem className="delay-350">
+                    <FormLabel className="text-blue-700 text-[11px] sm:text-xs font-semibold">Họ tên học sinh</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Nhập họ tên học sinh"
+                        className="bg-blue-50 text-blue-900 border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 h-8 sm:h-9 text-[13px] sm:text-sm"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-[10px] sm:text-xs" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="birthYear"
+                render={({ field }) => (
+                  <FormItem className="delay-375">
+                    <FormLabel className="text-blue-700 text-[11px] sm:text-xs font-semibold">Năm sinh</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        inputMode="numeric"
+                        placeholder="Ví dụ: 2012"
+                        maxLength={4}
+                        className="bg-blue-50 text-blue-900 border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 h-8 sm:h-9 text-[13px] sm:text-sm"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-[10px] sm:text-xs" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="school"
+                render={({ field }) => (
+                  <FormItem className="delay-400">
+                    <FormLabel className="text-blue-700 text-[11px] sm:text-xs font-semibold">Trường đang theo học</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Nhập tên trường học sinh đang theo học"
+                        className="bg-blue-50 text-blue-900 border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 h-8 sm:h-9 text-[13px] sm:text-sm"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-[10px] sm:text-xs" />
+                  </FormItem>
+                )}
+              />
+
               <FormField
                 control={form.control}
                 name="question"

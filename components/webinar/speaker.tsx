@@ -10,31 +10,43 @@ export default function Speaker() {
   const speakers = {
     hung: {
       name: "Nguyễn Đức Long",
-      title: " Tổng Giám đốc Học viện AIUni | Chủ tịch hội đồng cố vấn chương trình AI57",
+      title: `- Tổng Giám đốc Học viện Công nghệ AIUni
+- Nguyên Chánh Văn phòng Quỹ Giáo dục Việt Nam
+- Hơn 20 năm kinh nghiệm điều hành và lãnh đạo chuyển đổi số`,
       bio: `Điều phối chương trình, dẫn dắt thảo luận và định hướng làm rõ lý do vì sao học sinh đam mê STEM cần tiếp xúc với AI từ sớm, cùng khát vọng phổ cập trí tuệ nhân tạo của AIUni. `,
       image: "/dien_gia/long.png", // Thay đổi đường dẫn ảnh tại đây (ví dụ: "/hung.png")
     },
     dat: {
       name: "PGS. TS Lê Chí Ngọc ",
-      title: `Giảng viên Khoa Toán ứng dụng và Tin học, Đại học Bách Khoa Hà Nội `,
-      bio: `Phân tích cách chương trình AI57 đơn giản hóa Toán học đại cương (Đại số, Giải tích) bằng "trực giác hình học" và làm rõ lợi thế dài hạn khi học sinh bước vào cánh cửa đại học. `,
+      title: `- Giảng viên Viện Toán ứng dụng và Tin học, Đại học Bách Khoa Hà Nội.
+      - Tiến sĩ Toán học (Đại học Kỹ thuật Freiberg, Đức) & Thạc sĩ Toán ứng dụng (Đại học California, Los Angeles - UCLA, Mỹ).
+      - Hơn 20 năm kinh nghiệm nghiên cứu, giảng dạy chuyên sâu về Học máy và Thị giác máy tính.`, 
+      
+bio: `Phân tích cách chương trình AI57 đơn giản hóa Toán học đại cương (Đại số, Giải tích) bằng "trực giác hình học" và làm rõ lợi thế dài hạn khi học sinh bước vào cánh cửa đại học. `,
       image: "/dien_gia/ngoc.png", // Thay đổi đường dẫn ảnh tại đây (ví dụ: "/dat.png")
     },
     my: {
       name: "TS. Đỗ Ngọc Minh ",
-      title: `Đồng sáng lập Khan Academy Vietnam | Chuyên gia Công nghệ và Giáo dục `,
+title: `- Đồng sáng lập Khan Academy Vietnam
+- Giám đốc Chương trình Tài nguyên Giáo dục Mở Việt Nam (VOER).
+- Thành viên Tổ tư vấn toàn cầu về Tài nguyên Giáo dục Mở (OER) của UNESCO.`,      
+
       bio: `Chia sẻ giải pháp giúp học sinh xây dựng "Hệ điều hành học tập cá nhân" bằng AI, cách ứng dụng NotebookLM, đồng thời nhấn mạnh về Đạo đức, An toàn AI và kỹ năng làm Portfolio nộp hồ sơ du học.`,
       image: "/dien_gia/minh.png", // Thay đổi đường dẫn ảnh tại đây (ví dụ: "/my.png")
     },
     "hung-student": {
       name: "TS. Dương Đức Anh",
-      title: `Phó Viện trưởng Viện nghiên cứu Điện tử, Tin học, Tự động hóa`,
+      title: `- Phó Viện trưởng Viện nghiên cứu Điện tử, Tin học, Tự động hóa, Bộ Công Thương.
+- Tiến sĩ Kỹ thuật điện tử, Thạc sĩ & Cử nhân Tự động hóa.
+- Tác giả nhiều công trình quốc tế (IEEE, Frontiers) về Mạng nơ-ron tích chập`,
       bio: `Đánh giá tính thực tiễn của mảng Thị giác máy tính (Computer Vision), hệ sinh thái NVIDIA và cách hướng dẫn học sinh tự tay làm dự án Camera AI thời gian thực theo chuẩn kỹ sư.`,
       image: "/dien_gia/anh.png", 
     },
     "chung": {
       name: "TS.Nguyễn Thành Chung",
-      title: `Giảng viên Cao cấp Học viện AIUni | Chuyên gia Giáo dục STEM `,
+      title: `- Giảng viên Cao cấp tại Học viện Công nghệ AIUni.
+- Tiến sĩ Lí luận và Phương pháp dạy học bộ môn Vật lí
+- Gần 30 năm kinh nghiệm giảng dạy STEM cho học sinh phổ thông.`,
       bio: `Làm rõ sự sẵn sàng của học sinh phổ thông với AI, giới thiệu môi trường thực hành "AI Sandbox" giúp lắp ghép các khối Lego AI thành sản phẩm và giải đáp thắc mắc cho người mới bắt đầu học code.`,
       image: "/dien_gia/chung.png", 
     },
@@ -146,7 +158,7 @@ export default function Speaker() {
                   {currentSpeaker.name}
                 </motion.h3>
                 <motion.p
-                  className="text-blue-500 text-base lg:text-lg font-semibold mb-4"
+                  className="text-blue-500 text-base lg:text-lg font-semibold mb-4 whitespace-pre-line"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}

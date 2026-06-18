@@ -5,9 +5,9 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     
     // Validate required fields
-    const { name, phone, email, question, source } = body
+    const { name, phone, email, studentName, birthYear, school, question, source } = body
 
-    if (!name || !phone || !email || !source) {
+    if (!name || !phone || !email || !studentName || !birthYear || !school || !source) {
       return NextResponse.json(
         { error: 'Vui lòng điền đầy đủ thông tin bắt buộc' },
         { status: 400 }
@@ -30,6 +30,9 @@ export async function POST(request: NextRequest) {
       name,
       phone,
       email,
+      studentName,
+      birthYear,
+      school,
       question: question || '',
       source,
       timestamp: new Date().toISOString(),

@@ -7,9 +7,12 @@ Hướng dẫn này giúp bạn tạo Google Sheet mới và kết nối với f
 | Cột trên Sheet | Trường trên form |
 |---|---|
 | Timestamp | Thời gian gửi (tự động) |
-| Họ và tên | Họ và tên |
+| Họ và tên | Họ và tên (phụ huynh/người đăng ký) |
 | Số điện thoại | Số điện thoại |
 | Email | Email |
+| Họ tên học sinh | Họ tên học sinh |
+| Năm sinh | Năm sinh học sinh |
+| Trường | Trường học sinh đang theo học |
 | Câu hỏi dành cho chương trình | Câu hỏi dành cho chương trình |
 | Bạn biết tới chương trình qua | Bạn biết tới chương trình qua |
 
@@ -23,7 +26,7 @@ Hướng dẫn này giúp bạn tạo Google Sheet mới và kết nối với f
 4. Ở **dòng 1**, nhập các tiêu đề cột theo đúng thứ tự sau:
 
 ```
-Timestamp | Họ và tên | Số điện thoại | Email | Câu hỏi dành cho chương trình | Bạn biết tới chương trình qua
+Timestamp | Họ và tên | Số điện thoại | Email | Họ tên học sinh | Năm sinh | Trường | Câu hỏi dành cho chương trình | Bạn biết tới chương trình qua
 ```
 
 > **Lưu ý:** Giữ nguyên thứ tự cột như trên để dữ liệu ghi đúng vị trí.
@@ -47,6 +50,9 @@ function doPost(e) {
       data.name || '',
       data.phone || '',
       data.email || '',
+      data.studentName || '',
+      data.birthYear || '',
+      data.school || '',
       data.question || '',
       data.source || ''
     ];
@@ -133,6 +139,9 @@ function testDataTransfer() {
     name: "Nguyễn Văn Test",
     phone: "0912345678",
     email: "test@example.com",
+    studentName: "Nguyễn Văn A",
+    birthYear: "2012",
+    school: "THCS Nguyễn Du",
     question: "Chương trình AI57 dành cho học sinh lớp mấy?",
     source: "facebook"
   };
@@ -142,6 +151,9 @@ function testDataTransfer() {
     testData.name,
     testData.phone,
     testData.email,
+    testData.studentName,
+    testData.birthYear,
+    testData.school,
     testData.question,
     testData.source
   ];
@@ -167,6 +179,9 @@ fetch(scriptUrl, {
     name: "Nguyễn Văn Test",
     phone: "0912345678",
     email: "test@example.com",
+    studentName: "Nguyễn Văn A",
+    birthYear: "2012",
+    school: "THCS Nguyễn Du",
     question: "Câu hỏi test",
     source: "zalo",
     timestamp: new Date().toISOString()
@@ -210,7 +225,7 @@ Nếu muốn thêm/bớt lựa chọn, sửa trong file `components/webinar/hero
 
 ## Checklist hoàn tất
 
-- [ ] Tạo Google Sheet mới với 6 cột tiêu đề đúng thứ tự
+- [ ] Tạo Google Sheet mới với 9 cột tiêu đề đúng thứ tự
 - [ ] Dán code Apps Script và lưu
 - [ ] Deploy Web App với quyền **Anyone**
 - [ ] Copy URL Web App
